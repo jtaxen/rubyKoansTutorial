@@ -14,6 +14,14 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+
+	
+	raise TriangleError, "One or more sides are to short" if a <= 0 || b <= 0 || c <= 0
+	x,y,z = [a,b,c].sort
+	raise TriangleError if x + y <= z
+
+
+
 	if a == b and b == c 
 		return :equilateral
 	end
